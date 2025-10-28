@@ -129,18 +129,75 @@
 
         .vocab-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(5, 1fr);
             gap: 20px;
+        }
+
+        @media (max-width: 1400px) {
+            .vocab-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .vocab-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .vocab-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vocab-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .vocab-card {
             background: white;
-            border: 2px solid #e0e0e0;
+            border: 3px solid #e0e0e0;
             border-radius: 10px;
             padding: 20px;
             transition: all 0.3s ease;
             cursor: pointer;
             animation: slideIn 0.3s ease;
+            border-top: 5px solid #667eea;
+        }
+
+        .vocab-card.cat-saludos {
+            border-top-color: #FF6B6B;
+        }
+
+        .vocab-card.cat-numeros {
+            border-top-color: #4ECDC4;
+        }
+
+        .vocab-card.cat-frutas {
+            border-top-color: #FFB84D;
+        }
+
+        .vocab-card.cat-verduras {
+            border-top-color: #6BCB77;
+        }
+
+        .vocab-card.cat-colores {
+            border-top-color: #9D84B7;
+        }
+
+        .vocab-card.cat-animales {
+            border-top-color: #FF8787;
+        }
+
+        .vocab-card.cat-naturaleza {
+            border-top-color: #5DADE2;
+        }
+
+        .vocab-card.cat-personas {
+            border-top-color: #F39C12;
         }
 
         @keyframes slideIn {
@@ -163,13 +220,45 @@
 
         .vocab-card-category {
             display: inline-block;
-            background: #667eea;
             color: white;
-            padding: 4px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.8em;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 10px;
+        }
+
+        /* Colores por categoría */
+        .cat-saludos {
+            background: #FF6B6B;
+        }
+
+        .cat-numeros {
+            background: #4ECDC4;
+        }
+
+        .cat-frutas {
+            background: #FFB84D;
+        }
+
+        .cat-verduras {
+            background: #6BCB77;
+        }
+
+        .cat-colores {
+            background: #9D84B7;
+        }
+
+        .cat-animales {
+            background: #FF8787;
+        }
+
+        .cat-naturaleza {
+            background: #5DADE2;
+        }
+
+        .cat-personas {
+            background: #F39C12;
         }
 
         .vocab-card-zapoteco {
@@ -545,9 +634,24 @@
         document.getElementById('searchInput').addEventListener('keyup', filtrarVocabulario);
         document.getElementById('categorySelect').addEventListener('change', filtrarVocabulario);
 
+        function getCategoryClass(categoria) {
+            const map = {
+                'Saludos': 'cat-saludos',
+                'Números': 'cat-numeros',
+                'Frutas': 'cat-frutas',
+                'Verduras': 'cat-verduras',
+                'Colores': 'cat-colores',
+                'Animales': 'cat-animales',
+                'Naturaleza': 'cat-naturaleza',
+                'Personas': 'cat-personas'
+            };
+            return map[categoria] || '';
+        }
+
         function renderVocabulario(items) {
             const grid = document.getElementById('vocabGrid');
             const noResults = document.getElementById('noResults');
+            const selectedCategory = document.getElementById('categorySelect').value;
 
             if (items.length === 0) {
                 grid.innerHTML = '';
@@ -556,14 +660,21 @@
             }
 
             noResults.style.display = 'none';
-            grid.innerHTML = items.map((item, index) => `
-                <div class="vocab-card">
-                    <div class="vocab-card-category">${item.categoria}</div>
-                    <div class="vocab-card-zapoteco">${item.zapoteco}</div>
-                    <div class="vocab-card-spanish">${item.spanish}</div>
-                    ${item.pronunciation ? `<div class="pronunciation">Pronunciación: ${item.pronunciation}</div>` : ''}
-                </div>
-            `).join('');
+            const showCategoryTitle = selectedCategory === ''; // Mostrar categoría solo cuando no hay filtro
+
+            grid.innerHTML = items.map((item, index) => {
+                const categoryClass = getCategoryClass(item.categoria);
+                const categoryDisplay = showCategoryTitle ? `<div class="vocab-card-category ${categoryClass}">${item.categoria}</div>` : '';
+
+                return `
+                    <div class="vocab-card ${categoryClass}">
+                        ${categoryDisplay}
+                        <div class="vocab-card-zapoteco">${item.zapoteco}</div>
+                        <div class="vocab-card-spanish">${item.spanish}</div>
+                        ${item.pronunciation ? `<div class="pronunciation">Pronunciación: ${item.pronunciation}</div>` : ''}
+                    </div>
+                `;
+            }).join('');
 
             actualizarEstadisticas(items);
         }
