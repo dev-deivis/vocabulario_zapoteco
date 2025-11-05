@@ -662,13 +662,23 @@
             actualizarEstadisticas(items);
         }
 
+        function normalizarTexto(texto) {
+            // Elimina acentos y convierte a minúsculas
+            return texto.normalize('NFD')
+                       .replace(/[\u0300-\u036f]/g, '')
+                       .toLowerCase();
+        }
+
         function filtrarVocabulario() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const searchTerm = normalizarTexto(document.getElementById('searchInput').value);
             const selectedCategory = document.getElementById('categorySelect').value;
 
             const filtered = vocabulario.filter(item => {
-                const matchSearch = item.zapoteco.toLowerCase().includes(searchTerm) ||
-                                  item.spanish.toLowerCase().includes(searchTerm);
+                const zapotecoNormalizado = normalizarTexto(item.zapoteco);
+                const spanishNormalizado = normalizarTexto(item.spanish);
+                
+                const matchSearch = zapotecoNormalizado.includes(searchTerm) ||
+                                  spanishNormalizado.includes(searchTerm);
                 const matchCategory = selectedCategory === '' || item.categoria === selectedCategory;
                 return matchSearch && matchCategory;
             });
