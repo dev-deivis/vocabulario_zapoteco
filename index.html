@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -168,44 +167,20 @@
             border-top: 5px solid #667eea;
         }
 
-        .vocab-card.cat-saludos {
-            border-top-color: #FF6B6B;
-        }
-
-        .vocab-card.cat-numeros {
-            border-top-color: #4ECDC4;
-        }
-
-        .vocab-card.cat-frutas {
-            border-top-color: #FFB84D;
-        }
-
-        .vocab-card.cat-verduras {
-            border-top-color: #6BCB77;
-        }
-
-        .vocab-card.cat-colores {
-            border-top-color: #9D84B7;
-        }
-
-        .vocab-card.cat-animales {
-            border-top-color: #FF8787;
-        }
-
-        .vocab-card.cat-naturaleza {
-            border-top-color: #5DADE2;
-        }
-
-        .vocab-card.cat-personas {
-            border-top-color: #F39C12;
-        }
+        .vocab-card.cat-saludos { border-top-color: #FF6B6B; }
+        .vocab-card.cat-numeros { border-top-color: #4ECDC4; }
+        .vocab-card.cat-frutas { border-top-color: #FFB84D; }
+        .vocab-card.cat-verduras { border-top-color: #6BCB77; }
+        .vocab-card.cat-colores { border-top-color: #9D84B7; }
+        .vocab-card.cat-animales { border-top-color: #FF8787; }
+        .vocab-card.cat-naturaleza { border-top-color: #5DADE2; }
+        .vocab-card.cat-personas { border-top-color: #F39C12; }
 
         @keyframes slideIn {
             from {
                 opacity: 0;
                 transform: translateY(10px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -229,37 +204,15 @@
         }
 
         /* Colores por categoría */
-        .cat-saludos {
-            background: #FF6B6B;
-        }
-
-        .cat-numeros {
-            background: #4ECDC4;
-        }
-
-        .cat-frutas {
-            background: #FFB84D;
-        }
-
-        .cat-verduras {
-            background: #6BCB77;
-        }
-
-        .cat-colores {
-            background: #9D84B7;
-        }
-
-        .cat-animales {
-            background: #FF8787;
-        }
-
-        .cat-naturaleza {
-            background: #5DADE2;
-        }
-
-        .cat-personas {
-            background: #F39C12;
-        }
+        .cat-saludos { background: #FF6B6B; }
+        .cat-numeros { background: #4ECDC4; }
+        .cat-frutas { background: #FFB84D; }
+        .cat-verduras { background: #6BCB77; }
+        .cat-colores { background: #9D84B7; }
+        .cat-animales { background: #FF8787; }
+        .cat-naturaleza { background: #5DADE2; }
+        .cat-personas { background: #F39C12; }
+        .cat-familia { background: #E74C3C; }
 
         .vocab-card-zapoteco {
             font-size: 1.4em;
@@ -360,7 +313,6 @@
         }
     </style>
 </head>
-
 <body>
     <div class="container">
         <div class="header">
@@ -370,8 +322,12 @@
 
         <div class="controls">
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Buscar palabra zapoteca o en español..."
-                    autocomplete="off">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Buscar palabra zapoteca o en español..."
+                    autocomplete="off"
+                >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="8"></circle>
                     <path d="m21 21-4.35-4.35"></path>
@@ -389,6 +345,7 @@
                     <option value="Animales">Animales</option>
                     <option value="Naturaleza">Naturaleza</option>
                     <option value="Personas">Personas</option>
+                    <option value="Familia">Familia</option>
                 </select>
                 <button class="clear-btn" onclick="limpiarFiltros()">Limpiar</button>
             </div>
@@ -409,14 +366,12 @@
             <div class="vocab-grid" id="vocabGrid"></div>
             <div class="no-results" id="noResults" style="display: none;">
                 <p>No se encontraron palabras que coincidan con tu búsqueda.</p>
-                <p style="margin-top: 10px; font-size: 0.9em;">Intenta con otros términos o selecciona una categoría
-                    diferente.</p>
+                <p style="margin-top: 10px; font-size: 0.9em;">Intenta con otros términos o selecciona una categoría diferente.</p>
             </div>
         </div>
 
         <div class="footer">
-            <p>© Vocabulario Zapoteco de la Sierra Norte de Oaxaca | Creado para preservar y aprender la lengua zapoteca
-            </p>
+            <p>© Vocabulario Zapoteco de la Sierra Norte de Oaxaca | Creado para preservar y aprender la lengua zapoteca</p>
         </div>
     </div>
 
@@ -623,7 +578,34 @@
             { zapoteco: "Compañero/amigo Kompatóh", spanish: "Compañero/amigo", categoria: "Personas", pronunciation: "" },
             { zapoteco: "Hombre Neshú", spanish: "Hombre", categoria: "Personas", pronunciation: "" },
             { zapoteco: "Padrino sshdibali", spanish: "Padrino", categoria: "Personas", pronunciation: "" },
-            { zapoteco: "Madrina Sshnabali", spanish: "Madrina", categoria: "Personas", pronunciation: "" }
+            { zapoteco: "Madrina Sshnabali", spanish: "Madrina", categoria: "Personas", pronunciation: "" },
+
+            // FAMILIA - Integrantes de la familia (Ka benne keriu)
+            { zapoteco: "Abuela Naguúla", spanish: "Abuela", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Abuelo Taguúla", spanish: "Abuelo", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Papá Tátta", spanish: "Papá", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Mamá Nnána", spanish: "Mamá", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Tío/Tía Tíú", spanish: "Tío/Tía", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Hermana (hombre a mujer) Danná", spanish: "Hermana (de hombre)", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Hermana (mujer a mujer) Rshila", spanish: "Hermana (de mujer)", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Hermano (hombre - hombre) Bet-tsí", spanish: "Hermano", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Hijo/Hija Rshinní", spanish: "Hijo/Hija", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Primo/Prima Primo/prima", spanish: "Primo/Prima", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Esposos Latsela", spanish: "Esposos", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Sobrina Rshini danna", spanish: "Sobrina", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Sobrino Rshini shidila", spanish: "Sobrino", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Nuera Rshua-ittsí", spanish: "Nuera", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Yerno Riyutzy", spanish: "Yerno", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Cuñada Kuñada", spanish: "Cuñada", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Cuñado Kuñado", spanish: "Cuñado", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Mis padres Kia Tátta nnána", spanish: "Mis padres", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Nieto/Nieta Ushuduah", spanish: "Nieto/Nieta", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Suegro Ostokí", spanish: "Suegro", categoria: "Familia", pronunciation: "" },
+            { zapoteco: "Suegra To-kí", spanish: "Suegra", categoria: "Familia", pronunciation: "" },
+
+            // PRONOMBRES POSESIVOS
+            { zapoteco: "Kia (Posesión 1ª persona)", spanish: "Mi/Mis - Pronombre posesivo", categoria: "Familia", pronunciation: "Ejemplo: Mis padres = Kia Tátta nñana" },
+            { zapoteco: "Kó (Posesión 3ª persona)", spanish: "Su/Sus - Pronombre posesivo", categoria: "Familia", pronunciation: "Ejemplos: le mnanakó Andrés yuyá reruáh yida / le bet-tsikó Diego / le dannakó Daniel" }
         ];
 
         // Renderizar inicialmente
@@ -643,7 +625,8 @@
                 'Colores': 'cat-colores',
                 'Animales': 'cat-animales',
                 'Naturaleza': 'cat-naturaleza',
-                'Personas': 'cat-personas'
+                'Personas': 'cat-personas',
+                'Familia': 'cat-familia'
             };
             return map[categoria] || '';
         }
@@ -652,7 +635,7 @@
             const grid = document.getElementById('vocabGrid');
             const noResults = document.getElementById('noResults');
             const selectedCategory = document.getElementById('categorySelect').value;
-
+            
             if (items.length === 0) {
                 grid.innerHTML = '';
                 noResults.style.display = 'block';
@@ -661,11 +644,11 @@
 
             noResults.style.display = 'none';
             const showCategoryTitle = selectedCategory === ''; // Mostrar categoría solo cuando no hay filtro
-
+            
             grid.innerHTML = items.map((item, index) => {
                 const categoryClass = getCategoryClass(item.categoria);
                 const categoryDisplay = showCategoryTitle ? `<div class="vocab-card-category ${categoryClass}">${item.categoria}</div>` : '';
-
+                
                 return `
                     <div class="vocab-card ${categoryClass}">
                         ${categoryDisplay}
@@ -685,7 +668,7 @@
 
             const filtered = vocabulario.filter(item => {
                 const matchSearch = item.zapoteco.toLowerCase().includes(searchTerm) ||
-                    item.spanish.toLowerCase().includes(searchTerm);
+                                  item.spanish.toLowerCase().includes(searchTerm);
                 const matchCategory = selectedCategory === '' || item.categoria === selectedCategory;
                 return matchSearch && matchCategory;
             });
@@ -706,5 +689,4 @@
         }
     </script>
 </body>
-
 </html>
