@@ -167,19 +167,10 @@
             border-top: 5px solid #667eea;
         }
 
-        .vocab-card.cat-saludos { border-top-color: #FF6B6B; }
-        .vocab-card.cat-numeros { border-top-color: #4ECDC4; }
-        .vocab-card.cat-frutas { border-top-color: #FFB84D; }
-        .vocab-card.cat-verduras { border-top-color: #6BCB77; }
-        .vocab-card.cat-colores { border-top-color: #9D84B7; }
-        .vocab-card.cat-animales { border-top-color: #FF8787; }
-        .vocab-card.cat-naturaleza { border-top-color: #5DADE2; }
-        .vocab-card.cat-personas { border-top-color: #F39C12; }
-
         @keyframes slideIn {
             from {
                 opacity: 0;
-                transform: translateY(10px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -188,57 +179,77 @@
         }
 
         .vocab-card:hover {
-            border-color: #667eea;
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         .vocab-card-category {
-            display: inline-block;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: 700;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-transform: uppercase;
             margin-bottom: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
         }
 
-        /* Colores por categoría */
-        .cat-saludos { background: #FF6B6B; }
-        .cat-numeros { background: #4ECDC4; }
-        .cat-frutas { background: #FFB84D; }
-        .cat-verduras { background: #6BCB77; }
-        .cat-colores { background: #9D84B7; }
-        .cat-animales { background: #FF8787; }
-        .cat-naturaleza { background: #5DADE2; }
-        .cat-personas { background: #F39C12; }
-        .cat-familia { background: #E74C3C; }
-
         .vocab-card-zapoteco {
-            font-size: 1.4em;
-            font-weight: 700;
-            color: #667eea;
-            margin: 10px 0;
-            word-break: break-word;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
         }
 
         .vocab-card-spanish {
-            font-size: 1.1em;
+            font-size: 1em;
             color: #666;
-            margin-bottom: 10px;
+            margin-top: 5px;
         }
 
         .pronunciation {
-            font-size: 0.9em;
-            color: #999;
-            margin-top: 10px;
+            font-size: 0.85em;
+            color: #888;
             font-style: italic;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #e0e0e0;
         }
+
+        .cat-saludos { border-top-color: #FF6B6B; }
+        .cat-saludos .vocab-card-category { background-color: #FFE5E5; color: #FF6B6B; }
+
+        .cat-numeros { border-top-color: #4ECDC4; }
+        .cat-numeros .vocab-card-category { background-color: #E5F9F7; color: #4ECDC4; }
+
+        .cat-frutas { border-top-color: #FFD93D; }
+        .cat-frutas .vocab-card-category { background-color: #FFF9E5; color: #CCA800; }
+
+        .cat-verduras { border-top-color: #6BCF7F; }
+        .cat-verduras .vocab-card-category { background-color: #E5F9E9; color: #4CAF50; }
+
+        .cat-colores { border-top-color: #A78BFA; }
+        .cat-colores .vocab-card-category { background-color: #F3F0FF; color: #7C3AED; }
+
+        .cat-animales { border-top-color: #FB923C; }
+        .cat-animales .vocab-card-category { background-color: #FFF3E5; color: #EA580C; }
+
+        .cat-naturaleza { border-top-color: #2DD4BF; }
+        .cat-naturaleza .vocab-card-category { background-color: #E5F9F6; color: #14B8A6; }
+
+        .cat-personas { border-top-color: #F472B6; }
+        .cat-personas .vocab-card-category { background-color: #FFF0F7; color: #EC4899; }
+
+        .cat-familia { border-top-color: #818CF8; }
+        .cat-familia .vocab-card-category { background-color: #EEF0FF; color: #6366F1; }
+
+        .cat-despensa { border-top-color: #F59E0B; }
+        .cat-despensa .vocab-card-category { background-color: #FEF3C7; color: #D97706; }
 
         .no-results {
             text-align: center;
             padding: 60px 20px;
             color: #999;
+            display: none;
         }
 
         .no-results svg {
@@ -248,91 +259,61 @@
             opacity: 0.3;
         }
 
+        .no-results h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .no-results p {
+            font-size: 1em;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #e0e0e0;
+        }
+
         .stats {
             display: flex;
-            gap: 20px;
+            justify-content: center;
+            gap: 30px;
             flex-wrap: wrap;
-            margin-bottom: 20px;
-            padding: 0 30px;
         }
 
         .stat-item {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            padding: 15px 25px;
-            background: #f0f2f5;
-            border-radius: 10px;
-            flex: 1;
-            min-width: 120px;
+            gap: 8px;
         }
 
         .stat-number {
-            font-size: 1.8em;
-            font-weight: 700;
+            font-size: 1.5em;
+            font-weight: bold;
             color: #667eea;
-        }
-
-        .stat-label {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 5px;
-        }
-
-        .clear-btn {
-            padding: 12px 20px;
-            background: #ff6b6b;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .clear-btn:hover {
-            background: #ff5252;
-            transform: scale(1.05);
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background: #f8f9fa;
-            color: #666;
-            font-size: 0.9em;
-        }
-
-        .controls-bottom {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;
-            align-items: center;
-            flex-wrap: wrap;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🌿 Vocabulario Zapoteco</h1>
+            <h1>Vocabulario Zapoteco</h1>
             <p>Sierra Norte de Oaxaca</p>
         </div>
 
         <div class="controls">
             <div class="search-box">
-                <input 
-                    type="text" 
-                    id="searchInput" 
-                    placeholder="Buscar palabra zapoteca o en español..."
-                    autocomplete="off"
-                >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <input type="text" id="searchInput" placeholder="Buscar palabra en español o zapoteco...">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="8"></circle>
                     <path d="m21 21-4.35-4.35"></path>
                 </svg>
             </div>
+            
             <div class="category-filter">
                 <label for="categorySelect">Categoría:</label>
                 <select id="categorySelect">
@@ -346,192 +327,195 @@
                     <option value="Naturaleza">Naturaleza</option>
                     <option value="Personas">Personas</option>
                     <option value="Familia">Familia</option>
+                    <option value="Despensa">Despensa</option>
                 </select>
-                <button class="clear-btn" onclick="limpiarFiltros()">Limpiar</button>
             </div>
         </div>
 
-        <div class="stats">
-            <div class="stat-item">
-                <div class="stat-number" id="totalVocab">0</div>
-                <div class="stat-label">Palabras totales</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="showingVocab">0</div>
-                <div class="stat-label">Mostrando</div>
-            </div>
+        <div class="results-count">
+            Mostrando <span id="showingVocab">0</span> de <span id="totalVocab">0</span> palabras
         </div>
 
         <div class="content">
             <div class="vocab-grid" id="vocabGrid"></div>
-            <div class="no-results" id="noResults" style="display: none;">
-                <p>No se encontraron palabras que coincidan con tu búsqueda.</p>
-                <p style="margin-top: 10px; font-size: 0.9em;">Intenta con otros términos o selecciona una categoría diferente.</p>
+            <div class="no-results" id="noResults">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <h3>No se encontraron resultados</h3>
+                <p>Intenta con otra palabra o categoría</p>
             </div>
         </div>
 
         <div class="footer">
-            <p>© Vocabulario Zapoteco de la Sierra Norte de Oaxaca | Creado para preservar y aprender la lengua zapoteca</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="totalVocab">0</span>
+                    <span>palabras totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <span>categorías</span>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
         const vocabulario = [
             // SALUDOS
-            { zapoteco: "Padiuxi", spanish: "Saludo general", categoria: "Saludos", pronunciation: "" },
-            { zapoteco: "Netéh laya", spanish: "Mi nombre es...", categoria: "Saludos", pronunciation: "" },
-            { zapoteco: "Netéh né", spanish: "Soy de...", categoria: "Saludos", pronunciation: "" },
-            { zapoteco: "Karuba keé benibiayalú", spanish: "Un gusto conocerlos", categoria: "Saludos", pronunciation: "" },
-            { zapoteco: "Bini lálú", spanish: "¿Cómo te llamas?", categoria: "Saludos", pronunciation: "" },
-            { zapoteco: "Bini la yétzico", spanish: "¿De dónde eres?", categoria: "Saludos", pronunciation: "" },
-            { zapoteco: "Luchú", spanish: "Y ¿tú?", categoria: "Saludos", pronunciation: "" },
-            { zapoteco: "Karuba keé dalu", spanish: "Bienvenido/Bienvenida", categoria: "Saludos", pronunciation: "" },
-            { zapoteco: "Balla yida yu lú", spanish: "Hasta luego (a hombres)", categoria: "Saludos", pronunciation: "" },
-            { zapoteco: "Balla yida ni lú", spanish: "Hasta luego (a mujeres)", categoria: "Saludos", pronunciation: "" },
-            { zapoteco: "Yuyá", spanish: "Tengo......", categoria: "Saludos", pronunciation: "" },
-            { zapoteco: "Kixarubalo", spanish: "Gracias", categoria: "Saludos", pronunciation: "" },
-            { zapoteco: "Hasta uxtila", spanish: "Hasta mañana", categoria: "Saludos", pronunciation: "" },
-            { zapoteco: "Etzá-bariu", spanish: "¡Hasta luego!", categoria: "Saludos", pronunciation: "" },
+            { zapoteco: "¡Bua! Ká-bua", spanish: "¡Hola!", categoria: "Saludos", pronunciation: "" },
+            { zapoteco: "¿Que xubet ló?", spanish: "¿Cómo estás?", categoria: "Saludos", pronunciation: "" },
+            { zapoteco: "Sii-tu-yah", spanish: "Bien", categoria: "Saludos", pronunciation: "" },
+            { zapoteco: "Ke-shia", spanish: "Gracias", categoria: "Saludos", pronunciation: "" },
+            { zapoteco: "Bua ni'ih", spanish: "Buenos días", categoria: "Saludos", pronunciation: "" },
+            { zapoteco: "¡Bua nía! Ka-bua nía", spanish: "Buenas tardes", categoria: "Saludos", pronunciation: "" },
+            { zapoteco: "¡Bua nákú! Ka-bua nákú", spanish: "Buenas noches", categoria: "Saludos", pronunciation: "" },
+            { zapoteco: "Za uní-reh", spanish: "Hasta luego", categoria: "Saludos", pronunciation: "" },
+            { zapoteco: "¡Kush-sola!", spanish: "¡Buen provecho!", categoria: "Saludos", pronunciation: "" },
+            { zapoteco: "¿Natsia bét-tó?", spanish: "¿Cuál es tu nombre?", categoria: "Saludos", pronunciation: "" },
+            { zapoteco: "Kia bét-tó...", spanish: "Mi nombre es...", categoria: "Saludos", pronunciation: "" },
+            { zapoteco: "¿Tuet rila-ló?", spanish: "¿A dónde vas?", categoria: "Saludos", pronunciation: "" },
+            { zapoteco: "Ría-nna betú", spanish: "Voy a mi casa", categoria: "Saludos", pronunciation: "" },
+            { zapoteco: "¿Tuet rhíttza-ló?", spanish: "¿De dónde vienes?", categoria: "Saludos", pronunciation: "" },
+            { zapoteco: "Rhíttza-nna yúh-be-tu", spanish: "Vengo de mi casa", categoria: "Saludos", pronunciation: "" },
+            { zapoteco: "¿Tuet gha-na-só?", spanish: "¿En dónde vives?", categoria: "Saludos", pronunciation: "" },
 
             // NÚMEROS
-            { zapoteco: "Bí-tagua", spanish: "0", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tú", spanish: "1", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Chúppa", spanish: "2", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tsú-nna", spanish: "3", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tappá", spanish: "4", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Gayú", spanish: "5", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Rshuppá", spanish: "6", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Gat-tsí", spanish: "7", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Shunnú", spanish: "8", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Gaá", spanish: "9", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tsíi", spanish: "10", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tsí nia", spanish: "11", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tsí nhuú", spanish: "12", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tsí nutzé", spanish: "13", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tsí ttá", spanish: "14", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tsinu", spanish: "15", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tsí rshupa", spanish: "16", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tsí ní", spanish: "17", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tsí rshunu", spanish: "18", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Che né", spanish: "19", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Gaalia", spanish: "20", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tú erua", spanish: "21", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Chúppaa erua", spanish: "22", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tsú nná erua", spanish: "23", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tappá erua", spanish: "24", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Gayú erua", spanish: "25", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Rshupá erua", spanish: "26", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Gat-tsí erua", spanish: "27", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Shunnú erua", spanish: "28", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Gaá erua", spanish: "29", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Reruáh", spanish: "30", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Chuáh", spanish: "40", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Siáyunah", spanish: "50", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Gayúnah", spanish: "60", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Gayúnah yuut tsí", spanish: "70", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Táh", spanish: "80", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Táh yuut tsí", spanish: "90", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Gashuá", spanish: "100", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Chúppaa gashuá", spanish: "200", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tsú-nna gashuá", spanish: "300", categoria: "Números", pronunciation: "" },
-            { zapoteco: "Tú mili", spanish: "1000", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Tuá", spanish: "1 - Uno", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Tupa", spanish: "2 - Dos", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shuna", spanish: "3 - Tres", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Tsapa", spanish: "4 - Cuatro", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Kayú", spanish: "5 - Cinco", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shupa", spanish: "6 - Seis", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Kashá", spanish: "7 - Siete", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shuna", spanish: "8 - Ocho", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Káxu", spanish: "9 - Nueve", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shi", spanish: "10 - Diez", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shi duá", spanish: "11 - Once", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shi tupa", spanish: "12 - Doce", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shi shuna", spanish: "13 - Trece", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shi tsapa", spanish: "14 - Catorce", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shi kayú", spanish: "15 - Quince", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shi shupa", spanish: "16 - Dieciséis", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shi kashá", spanish: "17 - Diecisiete", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shi shuna", spanish: "18 - Dieciocho", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shi káxu", spanish: "19 - Diecinueve", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Kalá", spanish: "20 - Veinte", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Kalá duá", spanish: "21 - Veintiuno", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Kalá tupa", spanish: "22 - Veintidós", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Kalá shuna", spanish: "23 - Veintitrés", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Kalá tsapa", spanish: "24 - Veinticuatro", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Kalá kayú", spanish: "25 - Veinticinco", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Kalá shupa", spanish: "26 - Veintiséis", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Kalá kashá", spanish: "27 - Veintisiete", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Kalá shuna", spanish: "28 - Veintiocho", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Kalá káxu", spanish: "29 - Veintinueve", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shupa-yá", spanish: "30 - Treinta", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shupa-yá duá", spanish: "31 - Treinta y uno", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Tsapa-yá", spanish: "40 - Cuarenta", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Ka-yú", spanish: "50 - Cincuenta", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shúpa-yá-shi", spanish: "60 - Sesenta", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Kashá-yá-shi", spanish: "70 - Setenta", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Shúna-yá-shi", spanish: "80 - Ochenta", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Káxu-yá-shi", spanish: "90 - Noventa", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Tó-tu-yá", spanish: "100 - Cien", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Mil", spanish: "1000 - Mil", categoria: "Números", pronunciation: "" },
+            { zapoteco: "Kkuí-ni-tu", spanish: "Medio", categoria: "Números", pronunciation: "" },
 
             // FRUTAS
-            { zapoteco: "Tahsia etse tuna", spanish: "Tuna", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Digaxxtila fresa", spanish: "Fresa", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Xa riah toronja", spanish: "Toronja", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Ish shu wi higo", spanish: "Higo", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Tzuna color sandía", spanish: "Sandía", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "La jue zapote", spanish: "Zapote", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Bisá cereza", spanish: "Cereza", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Yiishi cacahuate", spanish: "Cacahuate", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Ninaxy manzana", spanish: "Manzana", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Kiál anona", spanish: "Anona", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Tuah ttsinah piña", spanish: "Piña", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Betsuli uva", spanish: "Uva", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Yatiaxxtila caña", spanish: "Caña", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Ishú aguacate", spanish: "Aguacate", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Marxlim lima", spanish: "Lima", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Táh dhí limón", spanish: "Limón", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Laah shunnu mamey", spanish: "Mamey", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Marasha naranja", spanish: "Naranja", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Betoxxtila plátano", spanish: "Plátano", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Gwi guayaba", spanish: "Guayaba", categoria: "Frutas", pronunciation: "" },
-            { zapoteco: "Traddú durazno", spanish: "Durazno", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Durazno bersino", spanish: "Durazno", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Mango mánku", spanish: "Mango", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Manzana Mannána", spanish: "Manzana", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Plátano Béd-tu", spanish: "Plátano", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Guayaba bet-tu di-há", spanish: "Guayaba", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Toronja túrúnha", spanish: "Toronja", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Tamarindo támarindu", spanish: "Tamarindo", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Naranja láranha", spanish: "Naranja", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Aguacate bet-tu shia-nu", spanish: "Aguacate", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Sandia shándia", spanish: "Sandía", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Melón Melón", spanish: "Melón", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Nanche nánshi", spanish: "Nanche", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Membrillo menbrilu", spanish: "Membrillo", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Papaya bet-tu biú", spanish: "Papaya", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Tejocote Teku-tu", spanish: "Tejocote", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Mandarina mandarina", spanish: "Mandarina", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Pera bera", spanish: "Pera", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Pitaya bet-tu kushá", spanish: "Pitaya", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Ciruela bet-tu nué", spanish: "Ciruela", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Granada Granáda", spanish: "Granada", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Limón limón", spanish: "Limón", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Piña biná", spanish: "Piña", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Grosella bet-tu xána", spanish: "Grosella", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Fresa brésa", spanish: "Fresa", categoria: "Frutas", pronunciation: "" },
+            { zapoteco: "Uva Uuba", spanish: "Uva", categoria: "Frutas", pronunciation: "" },
 
             // VERDURAS
-            { zapoteco: "Chayote yet-tuet-seh", spanish: "Chayote", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Calabacita yet-tuh-too", spanish: "Calabacita", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Ejote dá yah", spanish: "Ejote", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Tomate Beshi dú", spanish: "Tomate", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Miltomate Beshi yishi", spanish: "Miltomate", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Ajo Gáshu", spanish: "Ajo", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Cebolla shishú", spanish: "Cebolla", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Papa Gú", spanish: "Papa", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Chile verde Yinah yaáh", spanish: "Chile verde", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Nopal bexa", spanish: "Nopal", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Berros Ediché", spanish: "Berros", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Chayocamoté guú yet-tuet-seh", spanish: "Chayocamoté", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Chepil yedhia shishia", spanish: "Chepil", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Guaje La-á", spanish: "Guaje", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Elote Taáh", spanish: "Elote", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Gusano de maguey Bella toóh", spanish: "Gusano de maguey", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Chicharo Dalberja", spanish: "Chicharo", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Cacao Duguía", spanish: "Cacao", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Verdolagas Dési", spanish: "Verdolagas", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Quiotes shiya tuáh", spanish: "Quiotes", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Quelites Yedhia guálasi", spanish: "Quelites", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Semillas/pepitas ká dethú", spanish: "Semillas/pepitas", categoria: "Verduras", pronunciation: "" },
-            { zapoteco: "Guías Ka ló kuana", spanish: "Guías", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Zanahoria shanáhuria", spanish: "Zanahoria", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Cebolla sébuya", spanish: "Cebolla", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Cilantro silánt", spanish: "Cilantro", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Ajo Áhu", spanish: "Ajo", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Tomate / jitomate bet-tu bishú", spanish: "Tomate/Jitomate", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Lechuga Leshúka", spanish: "Lechuga", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Repollo Rrépoyu", spanish: "Repollo", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Col de brucela súh", spanish: "Col de Bruselas", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Brócoli Vrokuli", spanish: "Brócoli", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Pepino Bebinu", spanish: "Pepino", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Coliflor Kulifuih", spanish: "Coliflor", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Calabaza Bet-tu nni", spanish: "Calabaza", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Chayote bet-tu nú", spanish: "Chayote", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Rábano Rábanu", spanish: "Rábano", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Jitomate Verde sidzú", spanish: "Jitomate Verde", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Papa Bátas", spanish: "Papa", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Berenjena Vilinsána", spanish: "Berenjena", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Pimiento Bimiéntu", spanish: "Pimiento", categoria: "Verduras", pronunciation: "" },
+            { zapoteco: "Camote Bet-tu Néh", spanish: "Camote", categoria: "Verduras", pronunciation: "" },
 
             // COLORES
-            { zapoteco: "Verde Yaá", spanish: "Verde", categoria: "Colores", pronunciation: "" },
-            { zapoteco: "Blanco Tsittsi", spanish: "Blanco", categoria: "Colores", pronunciation: "" },
-            { zapoteco: "Rojo Shinaá", spanish: "Rojo", categoria: "Colores", pronunciation: "" },
-            { zapoteco: "Amarillo Yattsi", spanish: "Amarillo", categoria: "Colores", pronunciation: "" },
-            { zapoteco: "Morado Muradu", spanish: "Morado", categoria: "Colores", pronunciation: "" },
-            { zapoteco: "Verde seco Yaáh bi-si", spanish: "Verde seco", categoria: "Colores", pronunciation: "" },
-            { zapoteco: "Gris Cuch-chi", spanish: "Gris", categoria: "Colores", pronunciation: "" },
-            { zapoteco: "Naranja Marasha", spanish: "Naranja", categoria: "Colores", pronunciation: "" },
-            { zapoteco: "Azul fuerte Marinu", spanish: "Azul fuerte", categoria: "Colores", pronunciation: "" },
-            { zapoteco: "Negro Idhia", spanish: "Negro", categoria: "Colores", pronunciation: "" },
-            { zapoteco: "Azul cielo Athiba yaba", spanish: "Azul cielo", categoria: "Colores", pronunciation: "" },
-            { zapoteco: "Rosa Athiba shia ruxha", spanish: "Rosa", categoria: "Colores", pronunciation: "" },
+            { zapoteco: "Azul Bissí nía", spanish: "Azul", categoria: "Colores", pronunciation: "" },
+            { zapoteco: "Amarillo Bissí bishú", spanish: "Amarillo", categoria: "Colores", pronunciation: "" },
+            { zapoteco: "Rojo Bissí xtsi", spanish: "Rojo", categoria: "Colores", pronunciation: "" },
+            { zapoteco: "Verde Bissí yáh-xtu", spanish: "Verde", categoria: "Colores", pronunciation: "" },
+            { zapoteco: "Café Bissí dxá", spanish: "Café", categoria: "Colores", pronunciation: "" },
+            { zapoteco: "Negro Bissí nía", spanish: "Negro", categoria: "Colores", pronunciation: "" },
+            { zapoteco: "Blanco Bissí xdá", spanish: "Blanco", categoria: "Colores", pronunciation: "" },
+            { zapoteco: "Rosado Bissí kúsh-sá", spanish: "Rosado", categoria: "Colores", pronunciation: "" },
+            { zapoteco: "Morado Bissí morádu", spanish: "Morado", categoria: "Colores", pronunciation: "" },
+            { zapoteco: "Gris Bissí gris", spanish: "Gris", categoria: "Colores", pronunciation: "" },
+            { zapoteco: "Naranja Bissí naranha", spanish: "Naranja", categoria: "Colores", pronunciation: "" },
 
             // ANIMALES
-            { zapoteco: "Mariposa Bel-lóh", spanish: "Mariposa", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Pájaro Binni", spanish: "Pájaro", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Ardilla Beridaá", spanish: "Ardilla", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Venado Betzíinah", spanish: "Venado", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Abeja Beédu", spanish: "Abeja", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "León Betsi", spanish: "León", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Serpiente Bel-lá", spanish: "Serpiente", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Zopilote Tzuuth", spanish: "Zopilote", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Ratón Bedhinah", spanish: "Ratón", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Zorro Bedáh", spanish: "Zorro", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Coyote Tzahuiuh", spanish: "Coyote", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Abejorro Bedhía", spanish: "Abejorro", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Lagartija Guattzih", spanish: "Lagartija", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Águila Beedhia", spanish: "Águila", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Paloma Bechah", spanish: "Paloma", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Tejón Beshitsú", spanish: "Tejón", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Comadreja Beshée", spanish: "Comadreja", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Zorrillo Bethii", spanish: "Zorillo", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Tortuga Begú", spanish: "Tortuga", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Murciélago Beyetí", spanish: "Murciélago", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Mosca Beshah", spanish: "Mosca", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Mosquito Beshatóh", spanish: "Mosquito", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Lombriz Bela guna", spanish: "Lombriz", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Hormiga Beré", spanish: "Hormiga", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Búho Betitih", spanish: "Búho", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Grillo Bettsu", spanish: "Grillo", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Oruga Bettsana", spanish: "Oruga", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Cucaracha Gualanah", spanish: "Cucaracha", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Caracol Beruchá", spanish: "Caracol", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Chapulín Sharhú", spanish: "Chapulín", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Colibrí Rshtutsí", spanish: "Colibrí", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Alacrán Sharheyi", spanish: "Alacrán", categoria: "Animales", pronunciation: "" },
-            { zapoteco: "Araña Begudia", spanish: "Araña", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Perro Bitzí", spanish: "Perro", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Gato Mishtu", spanish: "Gato", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Vaca Yagha", spanish: "Vaca", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Caballo Kabayu", spanish: "Caballo", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Burro Búdú", spanish: "Burro", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Borrego Uxé", spanish: "Borrego", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Chivo Belé", spanish: "Chivo", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Puerco Guishi", spanish: "Puerco", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Guajolote Belé-yaghi", spanish: "Guajolote", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Pollo Yaghi", spanish: "Pollo", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Pato Bato", spanish: "Pato", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Paloma Bidi-ghatu", spanish: "Paloma", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Ratón Yui-yui", spanish: "Ratón", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Zorro Itzá", spanish: "Zorro", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Venado bexú", spanish: "Venado", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Conejo Dáh-ía", spanish: "Conejo", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Ardilla Bet-zá", spanish: "Ardilla", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Gallina biuú", spanish: "Gallina", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Zopilote Shulubu", spanish: "Zopilote", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Búho Bidi-bisú", spanish: "Búho", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Mosca Melú", spanish: "Mosca", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Hormiga Bet-tzú", spanish: "Hormiga", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Abeja Betsú", spanish: "Abeja", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Mariposa Betziná", spanish: "Mariposa", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Araña Yusá", spanish: "Araña", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Grillo Dá-nah-ria", spanish: "Grillo", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Chapulín Bet-tzú ló", spanish: "Chapulín", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Caracol Belábi-tu", spanish: "Caracol", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Gusano Bellú dib-tú", spanish: "Gusano", categoria: "Animales", pronunciation: "" },
+            { zapoteco: "Gallina De Guinea Biúh-yu", spanish: "Gallina de Guinea", categoria: "Animales", pronunciation: "" },
             { zapoteco: "Sapo Belutzu", spanish: "Sapo", categoria: "Animales", pronunciation: "" },
 
             // ELEMENTOS DE LA NATURALEZA
@@ -605,7 +589,42 @@
 
             // PRONOMBRES POSESIVOS
             { zapoteco: "Kia (Posesión 1ª persona)", spanish: "Mi/Mis - Pronombre posesivo", categoria: "Familia", pronunciation: "Ejemplo: Mis padres = Kia Tátta nñana" },
-            { zapoteco: "Kó (Posesión 3ª persona)", spanish: "Su/Sus - Pronombre posesivo", categoria: "Familia", pronunciation: "Ejemplos: le mnanakó Andrés yuyá reruáh yida / le bet-tsikó Diego / le dannakó Daniel" }
+            { zapoteco: "Kó (Posesión 3ª persona)", spanish: "Su/Sus - Pronombre posesivo", categoria: "Familia", pronunciation: "Ejemplos: le mnanakó Andrés yuyá reruáh yida / le bet-tsikó Diego / le dannakó Daniel" },
+
+            // DESPENSA
+            { zapoteco: "Índa", spanish: "Agua", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Dé-teh", spanish: "Sal", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Ta-rshishi", spanish: "Azúcar", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Sitssi", spanish: "Leche", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Dháh", spanish: "Frijol", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Táh-dhá", spanish: "Aceite", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Café bih", spanish: "Café molido", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Suet-ta", spanish: "Servilletas", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Yinah-bitzi", spanish: "Chile seco", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Yáh shtila", spanish: "Jabón", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Táh rhutisitssi", spanish: "Cloro", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Sit-ta", spanish: "Huevo", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Bela", spanish: "Carne", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Teshu", spanish: "Tostadas", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Taxtila", spanish: "Pan", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Rshishi digá, traddú, diga xxtila", spanish: "Mermelada", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Yinah shúnia", spanish: "Salsa", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Etta", spanish: "Tortillas", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Ishtá", spanish: "Arroz", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Shuaxxtila dhini", spanish: "Pastas de trigo", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Ishí", spanish: "Papel higiénico", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Yedhia shuah", spanish: "Harina de maíz", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Yedhia shuaxxtila", spanish: "Harina de trigo", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Dayá shuni", spanish: "Pasta dental", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Dayábiá", spanish: "Cepillo dental", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Itssi shtila", spanish: "Artículos para el cabello", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Yuni", spanish: "Paquete", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Bexxeni", spanish: "Caja", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Tumi", spanish: "Bolsa", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Nisa", spanish: "Litro", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Uxtali", spanish: "Saco", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Gheni", spanish: "Frasco", categoria: "Despensa", pronunciation: "" },
+            { zapoteco: "Kilu", spanish: "Kilo", categoria: "Despensa", pronunciation: "" }
         ];
 
         // Renderizar inicialmente
@@ -626,7 +645,8 @@
                 'Animales': 'cat-animales',
                 'Naturaleza': 'cat-naturaleza',
                 'Personas': 'cat-personas',
-                'Familia': 'cat-familia'
+                'Familia': 'cat-familia',
+                'Despensa': 'cat-despensa'
             };
             return map[categoria] || '';
         }
