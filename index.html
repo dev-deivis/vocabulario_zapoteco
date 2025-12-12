@@ -307,6 +307,33 @@
             color: #D97706;
         }
 
+        .cat-ropa {
+            border-top-color: #EC4899;
+        }
+
+        .cat-ropa .vocab-card-category {
+            background-color: #FCE7F3;
+            color: #DB2777;
+        }
+
+        .cat-modales {
+            border-top-color: #10B981;
+        }
+
+        .cat-modales .vocab-card-category {
+            background-color: #D1FAE5;
+            color: #059669;
+        }
+
+        .cat-interrogativos {
+            border-top-color: #F59E0B;
+        }
+
+        .cat-interrogativos .vocab-card-category {
+            background-color: #FEF3C7;
+            color: #D97706;
+        }
+
         .no-results {
             text-align: center;
             padding: 60px 20px;
@@ -393,6 +420,8 @@
                     <option value="Familia">Familia</option>
                     <option value="Despensa">Despensa</option>
                     <option value="Ropa">Ropa</option>
+                    <option value="Modales">Modales</option>
+                    <option value="Interrogativos">Interrogativos</option>
                 </select>
             </div>
         </div>
@@ -421,7 +450,7 @@
                     <span>palabras totales</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">10</span>
+                    <span class="stat-number">13</span>
                     <span>categorías</span>
                 </div>
             </div>
@@ -695,6 +724,33 @@
             { zapoteco: "Gheni", spanish: "Frasco", categoria: "Despensa", pronunciation: "" },
             { zapoteco: "Kilu", spanish: "Kilo", categoria: "Despensa", pronunciation: "" },
 
+            // MODALES
+            { zapoteco: "Nanda raqué- da ke", spanish: "Yo creo que... (evento relevante)", categoria: "Modales", pronunciation: "" },
+            { zapoteco: "Netéh raqué- da ka", spanish: "Yo creo que... (situación cotidiana)", categoria: "Modales", pronunciation: "" },
+            { zapoteco: "rulena natzá ka shia", spanish: "Parece que hoy va a llover", categoria: "Modales", pronunciation: "" },
+            { zapoteco: "Regwinite", spanish: "Lo siento", categoria: "Modales", pronunciation: "" },
+            { zapoteco: "Benití ló", spanish: "Perdón (a una persona)", categoria: "Modales", pronunciation: "" },
+            { zapoteco: "Benití ló ketu", spanish: "Perdón (a grupo de personas)", categoria: "Modales", pronunciation: "" },
+            { zapoteco: "Anabá. Kisharubalo", spanish: "Así está bien. Gracias.", categoria: "Modales", pronunciation: "" },
+            { zapoteco: "Licenciako", spanish: "Con permiso (informal)", categoria: "Modales", pronunciation: "" },
+            { zapoteco: "Licencia kó teya", spanish: "Con permiso (formal)", categoria: "Modales", pronunciation: "" },
+            { zapoteco: "Bini dúalu", spanish: "¿Cómo estás? (jóvenes)", categoria: "Modales", pronunciation: "" },
+            { zapoteco: "Bini Rtélu", spanish: "¿Cómo estás? (mayores)", categoria: "Modales", pronunciation: "" },
+            { zapoteco: "Bini rtekuno", spanish: "¿Cómo estás? (familiares mayores)", categoria: "Modales", pronunciation: "" },
+            { zapoteco: "Chi deyaya", spanish: "¡Ya me voy!", categoria: "Modales", pronunciation: "" },
+
+            // INTERROGATIVOS
+            { zapoteco: "Bata", spanish: "¿Cuándo?", categoria: "Interrogativos", pronunciation: "" },
+            { zapoteco: "galia", spanish: "¿Cuánto?", categoria: "Interrogativos", pronunciation: "" },
+            { zapoteco: "kani", spanish: "¿Dónde?", categoria: "Interrogativos", pronunciation: "" },
+            { zapoteco: "bini ke", spanish: "¿Por qué?", categoria: "Interrogativos", pronunciation: "" },
+            { zapoteco: "Bi", spanish: "¿Qué?", categoria: "Interrogativos", pronunciation: "" },
+            { zapoteco: "Nuni", spanish: "¿Quién?", categoria: "Interrogativos", pronunciation: "" },
+            { zapoteco: "Bini", spanish: "¿Cómo?", categoria: "Interrogativos", pronunciation: "" },
+            { zapoteco: "bata nga Santu Lalukó", spanish: "¿Cuándo es tu cumpleaños?", categoria: "Interrogativos", pronunciation: "" },
+            { zapoteco: "Bach shená cumpleaños kiu", spanish: "¿Cuándo es tu cumpleaños? (alt)", categoria: "Interrogativos", pronunciation: "" },
+            { zapoteco: "Netéh Santu Lalu nga tza tappá erua, biuh tú", spanish: "Mi cumpleaños es el 24 de enero", categoria: "Interrogativos", pronunciation: "" },
+            { zapoteco: "Nanda rhuna cumplir yida tza tappá erua, biuh tú", spanish: "Yo cumplo años el día 24 de enero", categoria: "Interrogativos", pronunciation: "" },
 
             // Ropa
             { zapoteco: "Tarhuto dhila", spanish: "Abrigo", categoria: "Ropa", pronunciation: "" },
@@ -723,7 +779,7 @@
             { zapoteco: "talla tóh", spanish: "Talla chica", categoria: "Ropa", pronunciation: "" },
             { zapoteco: "talla lawi", spanish: "Talla mediana ", categoria: "Ropa", pronunciation: "" },
             { zapoteco: "Talla shení", spanish: "Talla grande", categoria: "Ropa", pronunciation: "" },
-            { zapoteco: "Talla  tha shení", spanish: "Talla extra grande", categoria: "Despensa", pronunciation: "" }
+            { zapoteco: "Talla  tha shení", spanish: "Talla extra grande", categoria: "Ropa", pronunciation: "" }
         ];
 
         // Renderizar inicialmente
@@ -746,7 +802,9 @@
                 'Personas': 'cat-personas',
                 'Familia': 'cat-familia',
                 'Despensa': 'cat-despensa',
-                'Ropa': 'cat-ropa'
+                'Ropa': 'cat-ropa',
+                'Modales': 'cat-modales',
+                'Interrogativos': 'cat-interrogativos'
             };
             return map[categoria] || '';
         }
