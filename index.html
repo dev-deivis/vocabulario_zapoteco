@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -172,6 +173,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -215,35 +217,95 @@
             border-top: 1px solid #e0e0e0;
         }
 
-        .cat-saludos { border-top-color: #FF6B6B; }
-        .cat-saludos .vocab-card-category { background-color: #FFE5E5; color: #FF6B6B; }
+        .cat-saludos {
+            border-top-color: #FF6B6B;
+        }
 
-        .cat-numeros { border-top-color: #4ECDC4; }
-        .cat-numeros .vocab-card-category { background-color: #E5F9F7; color: #4ECDC4; }
+        .cat-saludos .vocab-card-category {
+            background-color: #FFE5E5;
+            color: #FF6B6B;
+        }
 
-        .cat-frutas { border-top-color: #FFD93D; }
-        .cat-frutas .vocab-card-category { background-color: #FFF9E5; color: #CCA800; }
+        .cat-numeros {
+            border-top-color: #4ECDC4;
+        }
 
-        .cat-verduras { border-top-color: #6BCF7F; }
-        .cat-verduras .vocab-card-category { background-color: #E5F9E9; color: #4CAF50; }
+        .cat-numeros .vocab-card-category {
+            background-color: #E5F9F7;
+            color: #4ECDC4;
+        }
 
-        .cat-colores { border-top-color: #A78BFA; }
-        .cat-colores .vocab-card-category { background-color: #F3F0FF; color: #7C3AED; }
+        .cat-frutas {
+            border-top-color: #FFD93D;
+        }
 
-        .cat-animales { border-top-color: #FB923C; }
-        .cat-animales .vocab-card-category { background-color: #FFF3E5; color: #EA580C; }
+        .cat-frutas .vocab-card-category {
+            background-color: #FFF9E5;
+            color: #CCA800;
+        }
 
-        .cat-naturaleza { border-top-color: #2DD4BF; }
-        .cat-naturaleza .vocab-card-category { background-color: #E5F9F6; color: #14B8A6; }
+        .cat-verduras {
+            border-top-color: #6BCF7F;
+        }
 
-        .cat-personas { border-top-color: #F472B6; }
-        .cat-personas .vocab-card-category { background-color: #FFF0F7; color: #EC4899; }
+        .cat-verduras .vocab-card-category {
+            background-color: #E5F9E9;
+            color: #4CAF50;
+        }
 
-        .cat-familia { border-top-color: #818CF8; }
-        .cat-familia .vocab-card-category { background-color: #EEF0FF; color: #6366F1; }
+        .cat-colores {
+            border-top-color: #A78BFA;
+        }
 
-        .cat-despensa { border-top-color: #F59E0B; }
-        .cat-despensa .vocab-card-category { background-color: #FEF3C7; color: #D97706; }
+        .cat-colores .vocab-card-category {
+            background-color: #F3F0FF;
+            color: #7C3AED;
+        }
+
+        .cat-animales {
+            border-top-color: #FB923C;
+        }
+
+        .cat-animales .vocab-card-category {
+            background-color: #FFF3E5;
+            color: #EA580C;
+        }
+
+        .cat-naturaleza {
+            border-top-color: #2DD4BF;
+        }
+
+        .cat-naturaleza .vocab-card-category {
+            background-color: #E5F9F6;
+            color: #14B8A6;
+        }
+
+        .cat-personas {
+            border-top-color: #F472B6;
+        }
+
+        .cat-personas .vocab-card-category {
+            background-color: #FFF0F7;
+            color: #EC4899;
+        }
+
+        .cat-familia {
+            border-top-color: #818CF8;
+        }
+
+        .cat-familia .vocab-card-category {
+            background-color: #EEF0FF;
+            color: #6366F1;
+        }
+
+        .cat-despensa {
+            border-top-color: #F59E0B;
+        }
+
+        .cat-despensa .vocab-card-category {
+            background-color: #FEF3C7;
+            color: #D97706;
+        }
 
         .no-results {
             text-align: center;
@@ -298,6 +360,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -308,12 +371,13 @@
         <div class="controls">
             <div class="search-box">
                 <input type="text" id="searchInput" placeholder="Buscar palabra en español o zapoteco...">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
                     <circle cx="11" cy="11" r="8"></circle>
                     <path d="m21 21-4.35-4.35"></path>
                 </svg>
             </div>
-            
+
             <div class="category-filter">
                 <label for="categorySelect">Categoría:</label>
                 <select id="categorySelect">
@@ -328,6 +392,7 @@
                     <option value="Personas">Personas</option>
                     <option value="Familia">Familia</option>
                     <option value="Despensa">Despensa</option>
+                    <option value="Ropa">Ropa</option>
                 </select>
             </div>
         </div>
@@ -339,7 +404,8 @@
         <div class="content">
             <div class="vocab-grid" id="vocabGrid"></div>
             <div class="no-results" id="noResults">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
                     <circle cx="11" cy="11" r="8"></circle>
                     <path d="m21 21-4.35-4.35"></path>
                 </svg>
@@ -364,7 +430,7 @@
 
     <script>
         const vocabulario = [
-        // SALUDOS
+            // SALUDOS
             { zapoteco: "Padiuxi", spanish: "Saludo general", categoria: "Saludos", pronunciation: "" },
             { zapoteco: "Netéh laya", spanish: "Mi nombre es...", categoria: "Saludos", pronunciation: "" },
             { zapoteco: "Netéh né", spanish: "Soy de...", categoria: "Saludos", pronunciation: "" },
@@ -593,7 +659,7 @@
             // PRONOMBRES POSESIVOS
             { zapoteco: "Kia (Posesión 1ª persona)", spanish: "Mi/Mis - Pronombre posesivo", categoria: "Familia", pronunciation: "Ejemplo: Mis padres = Kia Tátta nñana" },
             { zapoteco: "Kó (Posesión 3ª persona)", spanish: "Su/Sus - Pronombre posesivo", categoria: "Familia", pronunciation: "Ejemplos: le mnanakó Andrés yuyá reruáh yida / le bet-tsikó Diego / le dannakó Daniel" },
-            
+
             // DESPENSA
             { zapoteco: "Índa", spanish: "Agua", categoria: "Despensa", pronunciation: "" },
             { zapoteco: "Dé-teh", spanish: "Sal", categoria: "Despensa", pronunciation: "" },
@@ -627,7 +693,37 @@
             { zapoteco: "Nisa", spanish: "Litro", categoria: "Despensa", pronunciation: "" },
             { zapoteco: "Uxtali", spanish: "Saco", categoria: "Despensa", pronunciation: "" },
             { zapoteco: "Gheni", spanish: "Frasco", categoria: "Despensa", pronunciation: "" },
-            { zapoteco: "Kilu", spanish: "Kilo", categoria: "Despensa", pronunciation: "" }
+            { zapoteco: "Kilu", spanish: "Kilo", categoria: "Despensa", pronunciation: "" },
+
+
+            // Ropa
+            { zapoteco: "Tarhuto dhila", spanish: "Abrigo", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Shló", spanish: "Falda", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Pañitu", spanish: "Pañuelo", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Camisha", spanish: "Camisa", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Camisha liyú", spanish: "Playera ", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Tarhadi riu", spanish: "Súeter", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Tarhuto", spanish: "Chamarra", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Yéela", spanish: "Sandalias", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Sho niula", spanish: "Vestido", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Sho shtila", spanish: "Traje/ caballero", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Tisha udaka ye tsiutsa", spanish: "Traje típico", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Tarhi binni", spanish: "Pantalón", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Tarhuto ikia", spanish: "Sombrero", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Bedutti", spanish: "Gorra", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Laba tah larh", spanish: "Tennis", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "ka laba", spanish: "Zapatos", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Laba tah yetti", spanish: "Huaraches", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Larhi ru nia", spanish: "Calcetines", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Tayú na", spanish: "Reloj de mano", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Thru shubeni", spanish: "Anillo", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Beka", spanish: "Aretes", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Cinshú", spanish: "Cinturón", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "labah larhi tuni", spanish: "Botas", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "talla tóh", spanish: "Talla chica", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "talla lawi", spanish: "Talla mediana ", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Talla shení", spanish: "Talla grande", categoria: "Ropa", pronunciation: "" },
+            { zapoteco: "Talla  tha shení", spanish: "Talla extra grande", categoria: "Despensa", pronunciation: "" }
         ];
 
         // Renderizar inicialmente
@@ -649,7 +745,8 @@
                 'Naturaleza': 'cat-naturaleza',
                 'Personas': 'cat-personas',
                 'Familia': 'cat-familia',
-                'Despensa': 'cat-despensa'
+                'Despensa': 'cat-despensa',
+                'Ropa': 'cat-ropa'
             };
             return map[categoria] || '';
         }
@@ -658,7 +755,7 @@
             const grid = document.getElementById('vocabGrid');
             const noResults = document.getElementById('noResults');
             const selectedCategory = document.getElementById('categorySelect').value;
-            
+
             if (items.length === 0) {
                 grid.innerHTML = '';
                 noResults.style.display = 'block';
@@ -667,11 +764,11 @@
 
             noResults.style.display = 'none';
             const showCategoryTitle = selectedCategory === ''; // Mostrar categoría solo cuando no hay filtro
-            
+
             grid.innerHTML = items.map((item, index) => {
                 const categoryClass = getCategoryClass(item.categoria);
                 const categoryDisplay = showCategoryTitle ? `<div class="vocab-card-category ${categoryClass}">${item.categoria}</div>` : '';
-                
+
                 return `
                     <div class="vocab-card ${categoryClass}">
                         ${categoryDisplay}
@@ -688,8 +785,8 @@
         function normalizarTexto(texto) {
             // Elimina acentos y convierte a minúsculas
             return texto.normalize('NFD')
-                       .replace(/[\u0300-\u036f]/g, '')
-                       .toLowerCase();
+                .replace(/[\u0300-\u036f]/g, '')
+                .toLowerCase();
         }
 
         function filtrarVocabulario() {
@@ -699,9 +796,9 @@
             const filtered = vocabulario.filter(item => {
                 const zapotecoNormalizado = normalizarTexto(item.zapoteco);
                 const spanishNormalizado = normalizarTexto(item.spanish);
-                
+
                 const matchSearch = zapotecoNormalizado.includes(searchTerm) ||
-                                  spanishNormalizado.includes(searchTerm);
+                    spanishNormalizado.includes(searchTerm);
                 const matchCategory = selectedCategory === '' || item.categoria === selectedCategory;
                 return matchSearch && matchCategory;
             });
@@ -722,4 +819,5 @@
         }
     </script>
 </body>
+
 </html>
